@@ -1,0 +1,13 @@
+# Postgres DB, connection string should look like: "postgres://ustav:example@localhost:5432/database?sslmode=disable"
+version: "3.9"
+services:
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: ustav
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: database
+    ports:
+      - 5432:5432
